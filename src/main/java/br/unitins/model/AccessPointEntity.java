@@ -27,7 +27,7 @@ public class AccessPointEntity {
     @Column(name = "mac_address", length = 17, nullable = false)
     private String macAddress; // MAC AP
     
-    @Column(name = "link_quality", precision = 5, scale = 2)
+    @Column(name = "link_quality")
     private Double linkQuality; // Qualidade do Link (%)
     
     @Column(name = "signal_level")
@@ -36,7 +36,7 @@ public class AccessPointEntity {
     @Column(name = "channel")
     private Integer channel; // Canal (Primary Channel)
     
-    @Column(name = "frequency", precision = 6, scale = 3)
+    @Column(name = "frequency")
     private Double frequency; // Frequência (GHz)
     
     @Column(name = "last_beacon")

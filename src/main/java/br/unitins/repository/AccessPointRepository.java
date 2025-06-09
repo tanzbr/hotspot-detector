@@ -51,7 +51,6 @@ public class AccessPointRepository {
             }
             
             transaction.commit();
-            logger.debug("Salvos {} Access Points no banco de dados", savedEntities.size());
             
         } catch (Exception e) {
             if (transaction.isActive()) {
@@ -87,7 +86,6 @@ public class AccessPointRepository {
             query.setMaxResults(100); // Limita a 100 resultados
             
             List<AccessPointEntity> results = query.getResultList();
-            logger.debug("Encontrados {} Access Points recentes", results.size());
             
             return results;
             
@@ -121,8 +119,6 @@ public class AccessPointRepository {
             query.setMaxResults(500); // Limita a 500 resultados
             
             List<AccessPointEntity> results = query.getResultList();
-            logger.debug("Encontrados {} Access Points no período {} - {}", 
-                    results.size(), startTime, endTime);
             
             return results;
             

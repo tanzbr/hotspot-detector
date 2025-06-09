@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    
+    <!-- Console Appender -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} -- %msg%n</pattern>
+        </encoder>
+    </appender>
+    
+    <!-- Configuração específica para bibliotecas externas -->
+    <logger name="org.hibernate" level="WARN" />
+    <logger name="org.jboss" level="WARN" />
+    <logger name="com.zaxxer.hikari" level="WARN" />
+    <logger name="org.mariadb" level="WARN" />
+    <logger name="org.quartz" level="WARN" />
+    <logger name="jakarta.persistence" level="WARN" />
+    
+    <!-- Configuração para o projeto -->
+    <logger name="br.unitins" level="INFO" />
+    
+    <!-- Root logger -->
+    <root level="INFO">
+        <appender-ref ref="CONSOLE" />
+    </root>
+    
+</configuration> 

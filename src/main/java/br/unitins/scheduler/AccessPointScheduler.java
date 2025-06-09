@@ -98,12 +98,8 @@ public class AccessPointScheduler {
         @Override
         public void execute(JobExecutionContext context) throws JobExecutionException {
             try {
-                jobLogger.debug("Iniciando escaneamento automático...");
-                
                 AccessPointPersistenceService service = new AccessPointPersistenceService();
                 service.scanAndPersist();
-                
-                jobLogger.debug("Escaneamento automático concluído");
                 
             } catch (Exception e) {
                 jobLogger.error("Erro durante escaneamento automático: {}", e.getMessage());
