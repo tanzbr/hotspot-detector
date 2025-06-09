@@ -1,0 +1,15 @@
+br\unitins\service\WiFiDetectorFactory.class
+br\unitins\database\DatabaseManager.class
+br\unitins\service\AccessPointPersistenceService.class
+br\unitins\service\HotspotDetectorService.class
+br\unitins\config\DatabaseConfig.class
+br\unitins\service\impl\WindowsWiFiDetector.class
+br\unitins\model\AccessPoint.class
+br\unitins\Main.class
+br\unitins\service\impl\LinuxWiFiDetector.class
+br\unitins\model\AccessPointEntity.class
+br\unitins\scheduler\AccessPointScheduler.class
+br\unitins\scheduler\AccessPointScheduler$ScanJob.class
+br\unitins\repository\AccessPointRepository.class
+br\unitins\database\CustomPersistenceUnitInfo.class
+br\unitins\service\WiFiDetector.class
