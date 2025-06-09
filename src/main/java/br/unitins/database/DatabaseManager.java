@@ -5,7 +5,7 @@ import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
-import jakarta.persistence.Persistence;
+import org.hibernate.jpa.HibernatePersistenceProvider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -79,7 +79,12 @@ public class DatabaseManager {
             // Configurações de conexão
             properties.put("hibernate.connection.datasource", dataSource);
             
-            this.entityManagerFactory = Persistence.createEntityManagerFactory("hotspot-detector", properties);
+            // Usar CustomPersistenceUnitInfo
+            CustomPersistenceUnitInfo persistenceUnitInfo = new CustomPersistenceUnitInfo("hotspot-detector");
+            
+            this.entityManagerFactory = new HibernatePersistenceProvider()
+                    .createContainerEntityManagerFactory(persistenceUnitInfo, properties);
+            
             logger.info("JPA inicializado");
             
         } catch (Exception e) {

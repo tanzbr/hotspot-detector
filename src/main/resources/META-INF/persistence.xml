@@ -16,4 +16,4 @@
             <!-- Configurações serão definidas programaticamente -->
         </properties>
     </persistence-unit>
-</persistence> 
+</persistence>
